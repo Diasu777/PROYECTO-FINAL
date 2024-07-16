@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="Width-device-width, initial-scale=1.0">
+	<title>Examen</title>
+	<link rel="stylesheet" type="text/css" href="estilos.css">
+</head>
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&display=swap');
+*{
+	box-sizing: border-box;
+	font-family: 'Balsamic Sans';
+}
+header{
+	text-align: center;
+	background: #000;
+	color: #fff;
+	padding: 10px 0;
+}
+.container{
+	max-width: 700px;
+	margin: auto;
+	padding: 20px;
+}
+section{
+	border: 2px solid #5624d0;
+	border-radius: 7px;
+	padding: 10px;
+	margin: 10px 0;
+}
+label{
+	display: block;
+	padding: 7px;
+	border-radius: 7px;
+	cursor: pointer;
+	border: 1px dashed #ccc;
+	margin-bottom: 3px;
+}
+label:hover{
+	background: #cec0fc; 
+}
+button{
+	width: 80%;
+	display: block;
+	margin: auto;
+	padding: 10px;
+	background-color: #76d7c8;
+	border: none;
+	cursor: pointer;
+	border-radius: 20px;
+}
+button:hover{
+	background: #000;
+	color: #fff;
+}
+h2{
+	text-align: center;
+}
+#resultado{
+	font-size: 30px;
+	color: darkred;
+}
+</style>
+<body>
+	<header>
+		<h1>Examen Modulo Avanzado</h1>
+		<p>!Listo¡</p>
+	</header>
+
+	<div class="container">
+		<section id="p0">
+			<h3>1 - ¿Cuál de las siguientes declaraciones crea un bucle for en Java?</h3>
+			<label>
+				<input type="radio" value="1" name="p0" onclick="respuesta(0,this)"> while
+			</label>
+			<label>
+				<input type="radio" value="2" name="p0" onclick="respuesta(0,this)"> do-while
+			</label>
+			<label>
+				<input type="radio" value="3" name="p0" onclick="respuesta(0,this)"> for
+			</label>
+		</section>	
+		<section id="p1">
+			<h3>2 - ¿Cuál de las siguientes afirmaciones describe mejor un bucle while en Java?</h3>
+			<label>
+				<input type="radio" value="1" name="p1" onclick="respuesta(1,this)"> Se ejecuta al menos una vez
+			</label>
+			<label>
+				<input type="radio" value="2" name="p1" onclick="respuesta(1,this)"> Se ejecuta hasta que una condición especificada sea verdadera
+			</label>
+			<label>
+				<input type="radio" value="3" name="p1" onclick="respuesta(1,this)"> Se ejecuta un número específico de veces
+			</label>
+		</section>
+		<section id="p2">
+			<h3>3 - ¿Cuál de las siguientes opciones define mejor un bucle do-while en Java?</h3>
+			<label>
+				<input type="radio" value="1" name="p2" onclick="respuesta(2,this)"> Se ejecuta al menos una vez
+			</label>
+			<label>
+				<input type="radio" value="2" name="p2" onclick="respuesta(2,this)"> Se ejecuta hasta que una condición especificada sea verdadera
+			</label>
+			<label>
+				<input type="radio" value="3" name="p2" onclick="respuesta(2,this)"> Se ejecuta un número específico de veces
+			</label>
+		</section>	
+		<section id="p3">
+			<h3>4 - ¿Qué método se utiliza comúnmente para calcular la sucesión de Fibonacci en Java?</h3>
+			<label>
+				<input type="radio" value="1" name="p3" onclick="respuesta(3,this)"> factorial()
+			</label>
+			<label>
+				<input type="radio" value="2" name="p3" onclick="respuesta(3,this)"> fibonacci()
+			</label>
+			<label>
+				<input type="radio" value="3" name="p3" onclick="respuesta(3,this)"> recursividad()
+			</label>
+		</section>	
+		<section id="p4">
+			<h3>5 - ¿Cuál es el valor de la posición inicial de la sucesión de Fibonacci?</h3>
+			<label>
+				<input type="radio" value="1" name="p4" onclick="respuesta(4,this)"> 0
+			</label>
+			<label>
+				<input type="radio" value="2" name="p4" onclick="respuesta(4,this)"> 1
+			</label>
+			<label>
+				<input type="radio" value="3" name="p4" onclick="respuesta(4,this)"> 2
+			</label>
+		</section>
+		<section id="p5">
+			<h3>6 - ¿Qué método se utiliza para comparar dos cadenas de caracteres en Java?</h3>
+			<label>
+				<input type="radio" value="1" name="p5" onclick="respuesta(5,this)"> compare()
+			</label>
+			<label>
+				<input type="radio" value="2" name="p5" onclick="respuesta(5,this)"> compareTo()
+			</label>
+			<label>
+				<input type="radio" value="3" name="p5" onclick="respuesta(5,this)"> equals()
+			</label>
+		</section>
+		<section id="p6">
+			<h3>7 - ¿Cuál es la función del método equals() en Java?</h3>
+			<label>
+				<input type="radio" value="1" name="p6" onclick="respuesta(6,this)"> Compara dos cadenas de caracteres
+			</label>
+			<label>
+				<input type="radio" value="2" name="p6" onclick="respuesta(6,this)"> Concatena dos cadenas de caracteres
+			</label>
+			<label>
+				<input type="radio" value="3" name="p6" onclick="respuesta(6,this)"> Divide una cadena en subcadenas
+			</label>
+		</section>
+		<section id="p7">
+			<h3>8 - ¿Qué método se utiliza para obtener la longitud de una cadena en Java?</h3>
+			<label>
+				<input type="radio" value="1" name="p7" onclick="respuesta(7,this)"> length()
+			</label>
+			<label>
+				<input type="radio" value="2" name="p7" onclick="respuesta(7,this)"> size()
+			</label>
+			<label>
+				<input type="radio" value="3" name="p7" onclick="respuesta(7,this)"> count()
+			</label>
+		</section>
+		<section id="p8">
+			<h3>9 - ¿Qué método se utiliza para extraer una parte de una cadena en Java?</h3>
+			<label>
+				<input type="radio" value="1" name="p8" onclick="respuesta(8,this)"> subsequence()
+			</label>
+			<label>
+				<input type="radio" value="2" name="p8" onclick="respuesta(8,this)"> substr()
+			</label>
+			<label>
+				<input type="radio" value="3" name="p8" onclick="respuesta(8,this)"> substring()
+			</label>
+		</section>
+		<section id="p9">
+			<h3>10 - ¿Qué estructura de datos se utiliza para almacenar una colección de elementos del mismo tipo en Java?</h3>
+			<label>
+				<input type="radio" value="1" name="p9" onclick="respuesta(9,this)"> List
+			</label>
+			<label>
+				<input type="radio" value="2" name="p9" onclick="respuesta(9,this)"> Array
+			</label>
+			<label>
+				<input type="radio" value="3" name="p9" onclick="respuesta(9,this)"> Set
+			</label>
+		</section>
+		<section id="p10">
+			<h3>11 - ¿Qué operación se utiliza para acceder a un elemento en un arreglo unidimensional en Java?</h3>
+			<label>
+				<input type="radio" value="1" name="p10" onclick="respuesta(10,this)"> point()
+			</label>
+			<label>
+				<input type="radio" value="2" name="p10" onclick="respuesta(10,this)"> access()
+			</label>
+			<label>
+				<input type="radio" value="3" name="p10" onclick="respuesta(10,this)"> []
+			</label>
+		</section>	
+		<section id="p11">
+			<h3>12 - ¿Cuál de las siguientes opciones describe mejor un vector en Java?</h3>
+			<label>
+				<input type="radio" value="1" name="p11" onclick="respuesta(11,this)"> Una estructura de datos que puede contener elementos de diferentes tipos
+			</label>
+			<label>
+				<input type="radio" value="2" name="p11" onclick="respuesta(11,this)"> Una estructura de datos que contiene una colección de elementos del mismo tipo
+			</label>
+			<label>
+				<input type="radio" value="3" name="p11" onclick="respuesta(11,this)"> Una estructura de datos que no puede contener elementos duplicados
+			</label>
+		</section>
+		<section id="p12">
+			<h3>13 - ¿Cuál es la diferencia entre los bucles while y do-while en Java?</h3>
+			<label>
+				<input type="radio" value="1" name="p12" onclick="respuesta(12,this)"> El bucle while se ejecuta al menos una vez, mientras que el bucle do-while no
+			</label>
+			<label>
+				<input type="radio" value="2" name="p12" onclick="respuesta(12,this)"> El bucle do-while se ejecuta al menos una vez, mientras que el bucle while no
+			</label>
+			<label>
+				<input type="radio" value="3" name="p12" onclick="respuesta(12,this)"> No hay diferencia entre ellos, son intercambiables
+			</label>
+		</section>	
+		<section id="p13">
+			<h3>14 - ¿Cómo se llama el término que describe la acción de repetir un conjunto de instrucciones un número finito de veces en Java?</h3>
+			<label>
+				<input type="radio" value="1" name="p13" onclick="respuesta(13,this)"> Iteración
+			</label>
+			<label>
+				<input type="radio" value="2" name="p13" onclick="respuesta(13,this)"> Recursión
+			</label>
+			<label>
+				<input type="radio" value="3" name="p13" onclick="respuesta(13,this)"> Secuencia
+			</label>
+		</section>	
+		<section id="p14">
+			<h3>15 - ¿Qué es la recursividad en Java?</h3>
+			<label>
+				<input type="radio" value="1" name="p14" onclick="respuesta(14,this)"> Una estructura de control utilizada para repetir un bloque de código
+			</label>
+			<label>
+				<input type="radio" value="2" name="p14" onclick="respuesta(14,this)"> Una técnica donde un método se llama a sí mismo para resolver un problema
+			</label>
+			<label>
+				<input type="radio" value="3" name="p14" onclick="respuesta(14,this)"> Una forma de concatenar cadenas de caracteres en Java
+			</label>
+		</section>
+		<section id="p15">
+			<h3>16 - ¿Cuál de los siguientes métodos se utiliza para invertir una cadena en Java?</h3>
+			<label>
+				<input type="radio" value="1" name="p15" onclick="respuesta(15,this)"> reverse()
+			</label>
+			<label>
+				<input type="radio" value="2" name="p15" onclick="respuesta(15,this)"> invert()
+			</label>
+			<label>
+				<input type="radio" value="3" name="p15" onclick="respuesta(15,this)"> flip()
+			</label>
+		</section>
+		<section id="p16">
+			<h3>17 - ¿Qué hace el método reverse() en Java?</h3>
+			<label>
+				<input type="radio" value="1" name="p16" onclick="respuesta(16,this)"> Invierte el orden de los elementos en un arreglo
+			</label>
+			<label>
+				<input type="radio" value="2" name="p16" onclick="respuesta(16,this)"> Invierte el orden de los caracteres en una cadena
+			</label>
+			<label>
+				<input type="radio" value="3" name="p16" onclick="respuesta(16,this)"> Invierte el orden de los elementos en una lista
+			</label>
+		</section>
+		<section id="p17">
+			<h3>18 - ¿Qué método se utiliza para agregar un elemento al final de un arreglo en Java?</h3>
+			<label>
+				<input type="radio" value="1" name="p17" onclick="respuesta(17,this)"> add()
+			</label>
+			<label>
+				<input type="radio" value="2" name="p17" onclick="respuesta(17,this)"> append()
+			</label>
+			<label>
+				<input type="radio" value="3" name="p17" onclick="respuesta(17,this)"> push()
+			</label>
+		</section>
+		<section id="p18">
+			<h3>19 - ¿Cómo se declara un arreglo unidimensional en Java?</h3>
+			<label>
+				<input type="radio" value="1" name="p18" onclick="respuesta(18,this)"> int[] array;
+			</label>
+			<label>
+				<input type="radio" value="2" name="p18" onclick="respuesta(18,this)"> array[] int;
+			</label>
+			<label>
+				<input type="radio" value="3" name="p18" onclick="respuesta(18,this)"> array int[];
+			</label>
+		</section>
+		<section id="p19">
+			<h3>20 - ¿Qué operación se utiliza para acceder al último elemento de un arreglo en Java?</h3>
+			<label>
+				<input type="radio" value="1" name="p19" onclick="respuesta(19,this)"> array[length]
+			</label>
+			<label>
+				<input type="radio" value="2" name="p19" onclick="respuesta(19,this)"> array[-1]
+			</label>
+			<label>
+				<input type="radio" value="3" name="p19" onclick="respuesta(19,this)"> array[length - 1]
+			</label>
+		</section>
+		<section id="p20">
+			<h3>21 - ¿Qué es una subcadena en Java?</h3>
+			<label>
+				<input type="radio" value="1" name="p20" onclick="respuesta(20,this)"> Una cadena que contiene solo caracteres especiales
+			</label>
+			<label>
+				<input type="radio" value="2" name="p20" onclick="respuesta(20,this)"> Una cadena que es una parte de una cadena más grande
+			</label>
+			<label>
+				<input type="radio" value="3" name="p20" onclick="respuesta(20,this)"> Una cadena que ha sido encriptada
+			</label>
+		</section>
+		<section id="p21">
+			<h3>22 - ¿Qué método se utiliza para convertir una cadena a minúsculas en Java?</h3>
+			<label>
+				<input type="radio" value="1" name="p21" onclick="respuesta(21,this)"> toLower()
+			</label>
+			<label>
+				<input type="radio" value="2" name="p21" onclick="respuesta(21,this)"> toLowerCase()
+			</label>
+			<label>
+				<input type="radio" value="3" name="p21" onclick="respuesta(21,this)"> lowerCase()
+			</label>
+		</section>
+		<section id="p22">
+			<h3>23 - ¿Cuál es el propósito del método trim() en Java?</h3>
+			<label>
+				<input type="radio" value="1" name="p22" onclick="respuesta(22,this)"> Elimina caracteres específicos de una cadena
+			</label>
+			<label>
+				<input type="radio" value="2" name="p22" onclick="respuesta(22,this)"> Elimina los espacios en blanco al principio y al final de una cadena
+			</label>
+			<label>
+				<input type="radio" value="3" name="p22" onclick="respuesta(22,this)"> Divide una cadena en subcadenas
+			</label>
+		</section>
+		<section id="p23">
+			<h3>24 - ¿Qué método se utiliza para dividir una cadena en función de un delimitador en Java?</h3>
+			<label>
+				<input type="radio" value="1" name="p23" onclick="respuesta(23,this)"> split()
+			</label>
+			<label>
+				<input type="radio" value="2" name="p23" onclick="respuesta(23,this)"> divide()
+			</label>
+			<label>
+				<input type="radio" value="3" name="p23" onclick="respuesta(23,this)"> separate()
+			</label>
+		</section>
+
+		<button onclick="corregir()">Corregir</button>
+		<h2>Cantidad Correctas: <span id="resultado"></span></h2>		
+	</div>
+
+	<script src="Js/scriptAvan.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="Width-device-width, initial-scale=1.0">
+	<title>Examen</title>
+	<link rel="stylesheet" type="text/css" href="estilos.css">
+</head>
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&display=swap');
+*{
+	box-sizing: border-box;
+	font-family: 'Balsamic Sans';
+}
+header{
+	text-align: center;
+	background: #000;
+	color: #fff;
+	padding: 10px 0;
+}
+.container{
+	max-width: 700px;
+	margin: auto;
+	padding: 20px;
+}
+section{
+	border: 2px solid #5624d0;
+	border-radius: 7px;
+	padding: 10px;
+	margin: 10px 0;
+}
+label{
+	display: block;
+	padding: 7px;
+	border-radius: 7px;
+	cursor: pointer;
+	border: 1px dashed #ccc;
+	margin-bottom: 3px;
+}
+label:hover{
+	background: #cec0fc; 
+}
+button{
+	width: 80%;
+	display: block;
+	margin: auto;
+	padding: 10px;
+	background-color: #76d7c8;
+	border: none;
+	cursor: pointer;
+	border-radius: 20px;
+}
+button:hover{
+	background: #000;
+	color: #fff;
+}
+h2{
+	text-align: center;
+}
+#resultado{
+	font-size: 30px;
+	color: darkred;
+}
+</style>
+<body>
+	<header>
+		<h1>Examen Modulo Intermedio</h1>
+		<p>!Listo¡</p>
+	</header>
+
+	<div class="container">
+		<section id="p0">
+			<h3>1 - ¿Que es una libreria?</h3>
+			<label>
+				<input type="radio" value="1" name="p0" onclick="respuesta(0,this)"> Conjunto de Clases que contiene atributos
+			</label>
+			<label>
+				<input type="radio" value="2" name="p0" onclick="respuesta(0,this)"> Conjunto de Datos de un sistema
+			</label>
+			<label>
+				<input type="radio" value="3" name="p0" onclick="respuesta(0,this)"> Paquete de estilos
+			</label>
+		</section>	
+		<section id="p1">
+			<h3>2 - ¿"scanner" es una libreria que nos permite?</h3>
+			<label>
+				<input type="radio" value="1" name="p1" onclick="respuesta(1,this)"> Establecer paquetes de diseños
+			</label>
+			<label>
+				<input type="radio" value="2" name="p1" onclick="respuesta(1,this)"> Establecer variables en el Codigo
+			</label>
+			<label>
+				<input type="radio" value="3" name="p1" onclick="respuesta(1,this)"> Ingresar Datos del teclado al Programa
+			</label>
+		</section>
+		<section id="p2">
+			<h3>3 - Estos Elementos solo trabajaran si se colocan dentro de 2 elementos</h3>
+			<label>
+				<input type="radio" value="1" name="p2" onclick="respuesta(2,this)"> Operadores Relacionales
+			</label>
+			<label>
+				<input type="radio" value="2" name="p2" onclick="respuesta(2,this)"> Operadores Logicos
+			</label>
+			<label>
+				<input type="radio" value="3" name="p2" onclick="respuesta(2,this)"> Librerias
+			</label>
+		</section>	
+		<section id="p3">
+			<h3>4 - Mejor Capacidad de programa para la toma de decisiones</h3>
+			<label>
+				<input type="radio" value="1" name="p3" onclick="respuesta(3,this)"> Operadores Relacionales
+			</label>
+			<label>
+				<input type="radio" value="2" name="p3" onclick="respuesta(3,this)"> Operadores Logicos
+			</label>
+			<label>
+				<input type="radio" value="3" name="p3" onclick="respuesta(3,this)"> Librerias
+			</label>
+		</section>	
+		<section id="p4">
+			<h3>5 - ¿"<" que tipo de Operadores son?</h3>
+			<label>
+				<input type="radio" value="1" name="p4" onclick="respuesta(4,this)"> Relacional
+			</label>
+			<label>
+				<input type="radio" value="2" name="p4" onclick="respuesta(4,this)"> Logico
+			</label>
+			<label>
+				<input type="radio" value="3" name="p4" onclick="respuesta(4,this)"> Ninguna de las anteriores
+			</label>
+		</section>
+		<section id="p5">
+			<h3>6 - ¿"==" que significan estos signos"?</h3>
+			<label>
+				<input type="radio" value="1" name="p5" onclick="respuesta(5,this)"> menor que
+			</label>
+			<label>
+				<input type="radio" value="2" name="p5" onclick="respuesta(5,this)"> mayor que
+			</label>
+			<label>
+				<input type="radio" value="3" name="p5" onclick="respuesta(5,this)"> igual a
+			</label>
+		</section>
+		<section id="p6">
+			<h3>7 - ¿"!=" que significan los signos anteriores?</h3>
+			<label>
+				<input type="radio" value="1" name="p6" onclick="respuesta(6,this)"> Menor que o igual a
+			</label>
+			<label>
+				<input type="radio" value="2" name="p6" onclick="respuesta(6,this)"> No igual a
+			</label>
+			<label>
+				<input type="radio" value="3" name="p6" onclick="respuesta(6,this)"> Mayor que o igual a
+			</label>
+		</section>
+		<section id="p7">
+			<h3>8 - ¿"A >= B" que quiere decir?</h3>
+			<label>
+				<input type="radio" value="1" name="p7" onclick="respuesta(7,this)"> A no es igual a B
+			</label>
+			<label>
+				<input type="radio" value="2" name="p7" onclick="respuesta(7,this)"> A es menor o igual a B
+			</label>
+			<label>
+				<input type="radio" value="3" name="p7" onclick="respuesta(7,this)"> A es mayor o igual a B
+			</label>
+		</section>
+		<section id="p8">
+			<h3>9 - ¿"A != B" que quiere decir?</h3>
+			<label>
+				<input type="radio" value="1" name="p8" onclick="respuesta(8,this)"> A no es igual a B
+			</label>
+			<label>
+				<input type="radio" value="2" name="p8" onclick="respuesta(8,this)"> A es menor o igual a B
+			</label>
+			<label>
+				<input type="radio" value="3" name="p8" onclick="respuesta(8,this)"> A es mayor o igual a B
+			</label>
+		</section>
+		<section id="p9">
+			<h3>10 - ¿"String" en un tipo de Dato de caracter?</h3>
+			<label>
+				<input type="radio" value="1" name="p9" onclick="respuesta(9,this)"> Objeto
+			</label>
+			<label>
+				<input type="radio" value="2" name="p9" onclick="respuesta(9,this)"> Primitivo
+			</label>
+			<label>
+				<input type="radio" value="3" name="p9" onclick="respuesta(9,this)"> Otro
+			</label>
+		</section>
+
+		<button onclick="corregir()">Corregir</button>
+		<h2>Cantidad Correctas: <span id="resultado"></span></h2>		
+	</div>
+
+	<script src="Js/scriptInt.js"></script>
+
+
+</body>
+</html>

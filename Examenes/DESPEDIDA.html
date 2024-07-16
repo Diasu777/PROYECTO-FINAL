@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>¡¡¡FELIZITACIONES/CONGRATULATIONS!!!</title>
+    <link rel="stylesheet" type="text/css" href="Mod0.css">
+    <style>
+        body {
+            background-image: url("FONDOFINAL.gif");
+            background-size: cover;
+            text-align: center;
+            font-size: 25px;
+            color: #000000;
+            font-family: 'Constantia', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .encabezado {
+            background-color: #000000; 
+            color: #ffffff; 
+            font-size: 30px; 
+            padding: 20px 0; 
+            margin-bottom: 20px; 
+        }
+        .video-container {
+            margin-top: 20px;
+        }
+        .video-container iframe {
+            width: 800px;
+            height: 500px;
+        }
+        table {
+            border: 18px solid black;
+            margin: auto; 
+            margin-top: 20px;
+        }
+        .imagen-despues {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .imagen-despues img {
+            max-width: 100%;
+            height:400px;
+            width: 400px;
+        }
+        .tabla-material-apoyo .titulo {
+            text-align: center;
+            vertical-align: middle;
+            font-size: 24px;
+            padding: 15px;
+        }
+        h4 {
+            font-size: 60px; 
+        }
+        .container {
+            margin-top: 50px;
+        }
+        input[type="text"] {
+            font-size: 20px;
+            padding: 10px;
+            width: 300px;
+            border: 2px solid #ff69b4;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            background-color: #ff69b4;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: #ff1493;
+        }
+        .diploma {
+            display: none;
+            margin: 20px auto;
+            border: 2px solid #000;
+            padding: 20px;
+            width: 600px;
+            height: 400px;
+            background: white;
+            position: relative;
+            background-image: url('DIPLOMAFONDO.jpg');
+            background-size: cover;
+        }
+        .diploma h1, .diploma p {
+            margin: 0;
+        }
+        .diploma h1 {
+            font-size: 36px;
+        }
+        .diploma .name {
+            margin-top: 50px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .diploma .footer {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 16px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="encabezado">
+        ATLAS COMPANY
+    </div>
+    <h1>HOLA DE NUEVO</h1>
+    <h2>ANTES DE QUE TE VAYAS QUERIA PLATICAR CONTIGO DE MANERA MAS PERSONAL, NO COMO UN PROGRAMA, QUIERO PODER HABLAR CONTIGO COMO EL DIRECTOR DE ATLAS COMPANY Y COMO DESARROLLADOR DEL CURSO QUE ACABAS DE COMPLETAR</h2>
+    <div class="imagen-despues">
+        <img src="LOGOATLAS.png">
+    </div>
+    <h3>TE DEJO UN VIDEO A CONTINUACION, DALE CLICK, TE EXPLICARE MAS A DETALLE MOTIVO, MISION, APRENDISAJE, Y CONSEJO DE QUE HACER EN ESTE PUNTO DE TU VIDA</h3>
+    
+    <div class="video-container">
+        <video controls>
+            <source src="SALUDOS.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+        </video>
+    </div>
+    <p>SALUDOS CORDIALES POR PARTE DE GRUPO ATLAS</p>
+    <h3>GRUPO ATLAS QUIERE DARTE UN PEQUEÑO REGALO POR HABER CONCLUIDO TU CURSO</h3>
+    <p>EN EL SIGUIENTE APARTADO PODRAS TRAMITAR TU PROPIO DIPLOMA DE GRADUACION DE ESTE CURSO, SOLO TIENES QUE COLOCAR TU NOMBRE COMPLETO Y PODRAS DESCARGARLO O IMPRIMIRLO, SE TE DARA UNA VISTA PREVIA DE COMO QUEDARA TU DIPLOMA, MUCHAS FELICIDADES, AHORA VE A TRAMITAR TU DIPLOMA PROGRAMADOR</p>
+    <div class="container">
+        <h1>Generador de Diplomas Grupo ATLAS</h1>
+        <p>Ingrese su Nombre Completo para generar su Diploma:</p>
+        <input type="text" id="name" placeholder="Su nombre">
+        <button onclick="generateDiploma()">Generar Diploma</button>
+        <div id="diploma" class="diploma">
+            <p>.</p>
+            <p>.</p>
+            <p>.</p>
+            <p>.</p>
+            <p>.</p>
+            <p class="name" id="diplomaName"></p>
+            <div class="footer">Fecha de Graduación: <span id="date"></span></div>
+        </div>
+        <div class="button-container">
+            <button id="downloadButton" style="display:none;" onclick="downloadDiploma()">Descargar Diploma</button>
+            <button id="printButton" style="display:none;" onclick="printDiploma()">Imprimir Diploma</button>
+        </div>
+    </div>
+
+    <script>
+        function generateDiploma() {
+            var name = document.getElementById('name').value;
+            if (name.trim() === "") {
+                alert("Por favor, ingrese su nombre.");
+                return;
+            }
+
+            document.getElementById('diplomaName').textContent = name;
+            var date = new Date().toLocaleDateString();
+            document.getElementById('date').textContent = date;
+
+            document.getElementById('diploma').style.display = 'block';
+            document.getElementById('downloadButton').style.display = 'inline-block';
+            document.getElementById('printButton').style.display = 'inline-block';
+        }
+
+        function downloadDiploma() {
+            var diploma = document.getElementById('diploma');
+            var name = document.getElementById('diplomaName').textContent;
+
+            html2canvas(diploma).then(canvas => {
+                var link = document.createElement('a');
+                link.href = canvas.toDataURL('image/png');
+                link.download = 'diploma_' + name + '.png';
+                link.click();
+            });
+        }
+
+        function printDiploma() {
+            var diploma = document.getElementById('diploma');
+            var printWindow = window.open('', '', 'width=800,height=600');
+            printWindow.document.write('<html><head><title>Diploma</title>');
+            printWindow.document.write('<style>.diploma { border: 2px solid #000; padding: 20px; width: 800px; height: 600px; background: white; position: relative; background-image: url("DIPLOMAFONDO.jpg"); background-size: cover; }</style>');
+            printWindow.document.write('</head><body>');
+            printWindow.document.write(diploma.outerHTML);
+            printWindow.document.write('</body></html>');
+            printWindow.document.close();
+            printWindow.focus();
+            printWindow.print();
+            printWindow.close();
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+</body>
+</html>
